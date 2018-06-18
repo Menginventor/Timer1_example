@@ -16,8 +16,6 @@ void setup() {
   //set Timer/Counter 1 Control Register
   TCCR1A = 0;             // normal counting mode
   TCCR1B = _BV(CS11);     // set prescaler of 8
-
-  
 }
 
 void loop() {
