@@ -8,7 +8,6 @@
   http://maxembedded.com/
 */
 void setup() {
-
   Serial.begin(115200);
   //set Timer/Counter1 Control Register
   TCCR1A = 0;             // normal counting mode
@@ -18,12 +17,13 @@ void setup() {
   TCCR1B = _BV(CS11);     // set prescaler of 8 , start timer
 }
 
-void loop() {
- 
-  
-}
+void loop() {}
 
 ISR(TIMER1_OVF_vect)
 {
-   Serial.println(millis());
+   Serial.println(micros());
 }
+
+
+
+

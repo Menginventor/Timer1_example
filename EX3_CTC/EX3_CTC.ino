@@ -16,10 +16,10 @@ void setup() {
 
 
   TCCR1A = 0;             // normal counting mode
-  TCCR1B = _BV(CTC1);     // set CTC
+  TCCR1B = _BV(WGM12);     // set CTC
 
   TIMSK1 |= _BV(TOIE1);   // set Timer Overflow Interrupt Enable
-  TIMSK1 |= _BV(OCIE1A); // enable compare interrupt
+  TIMSK1 |= _BV(OCIE1A); // enable  Output Compare Interrupt
   OCR1A = usToTicks(25000) - 1;
   TCCR1B |= _BV(CS11);     // prescaler of 8 , start timer
 }
